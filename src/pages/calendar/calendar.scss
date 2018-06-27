@@ -1,0 +1,26 @@
+page-calendar {
+.columnHeader {
+		text-align: center;
+		font-weight: bold;
+	}
+	.cal-today {
+		.cal-day-number {
+			font-size: 1.5em !important;
+		}
+	}
+	.cal-day-cell {
+		min-height: 40px;
+	}
+	.cal-cell-top {
+		min-height: 10px;
+	}
+	.cal-day-number {
+		font-size: 1em;
+		margin-top: 10px;
+		margin-bottom: 5px;
+		margin-right: 5px;
+	}
+	.cal-day-badge {
+		display: none;
+	}
+}
