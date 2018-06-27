@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { Calendar } from '@ionic-native/calendar';
 import { EventListPage } from '../event-list/event-list';
 import { formMethodConst } from '../../app/constants/form-method.const';
-import { isDefaultChangeDetectionStrategy } from '@angular/core/src/change_detection/constants';
 
 @IonicPage()
 @Component({

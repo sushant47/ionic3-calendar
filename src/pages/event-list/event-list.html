@@ -12,8 +12,8 @@
     <ion-item-sliding *ngFor="let item of items">
       <button ion-item *ngIf="item.calendar_id === '1'" (click)="itemSelected(item)">
         {{ item.title }}
-        <p>Start Date: {{item.dtstart}}
-          <br> End Date: {{item.dtend}}
+        <p>Start Date: {{item.dtstart | date: "yyyy/MM/dd HH:mm:ss"}}
+          <br> End Date: {{item.dtend | date: "yyyy/MM/dd HH:mm:ss"}}
           <br> Location: {{item.eventLocation}}</p>
       </button>
 

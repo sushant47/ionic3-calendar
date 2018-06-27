@@ -48,22 +48,22 @@ export class EventListPage {
     return [{
       'calendar_id': '1',
       'title': 'test1',
-      'dtstart': '21/06/2018',
-      'dtend': '21/06/2018',
+      'dtstart': '21356',
+      'dtend': '13213',
       'eventLocation': 'pune'
     },
     {
       'calendar_id': '1',
       'title': 'test2',
-      'dtstart': '21/06/2018',
-      'dtend': '21/06/2018',
+      'dtstart': '21356',
+      'dtend': '13213',
       'eventLocation': 'pune'
     },
     {
       'calendar_id': '1',
       'title': 'test3',
-      'dtstart': '21/06/2018',
-      'dtend': '21/06/2018',
+      'dtstart': '21356',
+      'dtend': '13213',
       'eventLocation': 'nasik'
     },
     {
