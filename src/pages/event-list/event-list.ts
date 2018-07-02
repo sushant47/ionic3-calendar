@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Calendar } from '@ionic-native/calendar';
 import { Platform } from 'ionic-angular';
 import { AddEventPage } from '../add-event/add-event';
+import { CalendarService } from '../../providers/calendar/calendar.service';
 
 /**
  * Generated class for the EventListPage page.
@@ -21,7 +22,8 @@ export class EventListPage {
   public items;
   public date = new Date();
   public isApp: boolean;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private calendar: Calendar, private platform: Platform) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private calendar: Calendar,
+    private platform: Platform, private calendarService: CalendarService) {
   }
 
   ionViewDidLoad() {
@@ -37,10 +39,9 @@ export class EventListPage {
       this.isApp = false;
       this.items = this.getMockEventsList();
       console.log(this.items);
-      // alert(this.items);
     } else {
       this.isApp = true;
-      this.loadEventListData()
+      this.loadEventListData();
     }
   }
 
@@ -90,20 +91,9 @@ export class EventListPage {
   }
 
   loadEventListData() {
-    let startDate = new Date(this.date.getFullYear(), this.date.getMonth(), 1);
-    let endDate = new Date(this.date.getFullYear(), this.date.getMonth() + 1, 0);
-    this.calendar.listEventsInRange(startDate, endDate).then(value => {
-      this.items = value;
-      console.log(this.items);
-      console.log(value);
+    this.calendarService.loadEventListData(this.date).then(data => {
+      this.items = data;
     });
-    // this.calendar.listCalendars().then(data => {
-    //   this.items = data;
-    //   alert(JSON.stringify(data));
-    //   alert(JSON.stringify(this.items));
-    //   console.log(this.items);
-    //   console.log(data);
-    // });
   }
   deleteEvent(item: any) {
     if (this.isApp) {

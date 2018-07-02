@@ -11,6 +11,8 @@ import { EventListPage } from '../pages/event-list/event-list';
 import { AddEventPage } from '../pages/add-event/add-event';
 import { CalendarModule } from 'angular-calendar';
 import { CalendarPage } from '../pages/calendar/calendar';
+import { CalendarService } from '../providers/calendar/calendar.service';
+import { ToastService } from '../providers/calendar/toast.service';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { CalendarPage } from '../pages/calendar/calendar';
     SplashScreen,
     Calendar,
     ErrorHandler,
+    CalendarService,
+    ToastService
   ]
 })
 export class AppModule { }
