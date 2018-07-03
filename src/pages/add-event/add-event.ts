@@ -33,10 +33,17 @@ export class AddEventPage implements OnInit {
   }
 
   ngOnInit() {
-    this.startDate = moment().format('YYYY-MM-DDThh:mm');
+    this.startDate = (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString();
     console.log(this.startDate);
-    this.endDate = moment(Date.now()).add(60, 'seconds').format('YYYY-MM-DDThh:mm');
+    // moment(Date.now()).add(60, 'seconds').format('YYYY-MM-DDThh:mm');
+    const endDate = new Date((new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000).getTime() + 60000)).toISOString();
+
+    console.log(endDate);
+    this.endDate = new Date((new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000).getTime() + 60000)).toISOString();
+    // this.endDate = endDate.toISOString();
+    // this.endDate = moment(Date.now()).local().add(new Date().getTimezoneOffset() * 60000, 'seconds').toISOString();
     console.log(this.endDate);
+    console.log('locale', moment.locale());
     if (this.params && !this.isEmpty(this.params.data)) {
       this.formMethod = formMethodConst.Edit;
     } else {
@@ -44,6 +51,9 @@ export class AddEventPage implements OnInit {
     }
   }
 
+  check() {
+    alert('called');
+  }
   isEmpty(obj) {
     return (Object.getOwnPropertyNames(obj).length === 0);
   }

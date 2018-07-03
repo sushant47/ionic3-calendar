@@ -50,6 +50,7 @@
           Date
         </ion-label>
         <ion-datetime
+          (click)='check()'
           displayFormat="MMM DD, YYYY HH:mm"
           min='{{startDate}}'
           [(ngModel)]="event.startDate"
